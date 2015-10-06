@@ -4,7 +4,7 @@
 #
 Name     : psutil
 Version  : 1.2.1
-Release  : 12
+Release  : 13
 URL      : https://pypi.python.org/packages/source/p/psutil/psutil-1.2.1.tar.gz
 Source0  : https://pypi.python.org/packages/source/p/psutil/psutil-1.2.1.tar.gz
 Summary  : A process and system utilities module for Python
@@ -13,7 +13,6 @@ License  : BSD-3-Clause
 Requires: psutil-python
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : psutil-python
 BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
@@ -47,7 +46,7 @@ python3 setup.py build -b py3
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-python2 setup.py test || :
+PYTHONPATH=%{buildroot}/usr/lib/python2.7/site-packages python2 setup.py test || :
 %install
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot}
