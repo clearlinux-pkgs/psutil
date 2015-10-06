@@ -4,7 +4,7 @@
 #
 Name     : psutil
 Version  : 1.2.1
-Release  : 11
+Release  : 12
 URL      : https://pypi.python.org/packages/source/p/psutil/psutil-1.2.1.tar.gz
 Source0  : https://pypi.python.org/packages/source/p/psutil/psutil-1.2.1.tar.gz
 Summary  : A process and system utilities module for Python
