@@ -4,7 +4,7 @@
 #
 Name     : psutil
 Version  : 4.4.1
-Release  : 22
+Release  : 23
 URL      : http://pypi.debian.net/psutil/psutil-4.4.1.tar.gz
 Source0  : http://pypi.debian.net/psutil/psutil-4.4.1.tar.gz
 Summary  : psutil is a cross-platform library for retrieving information onrunning processes and system utilization (CPU, memory, disks, network)in Python.
