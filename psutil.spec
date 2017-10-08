@@ -4,7 +4,7 @@
 #
 Name     : psutil
 Version  : 5.3.1
-Release  : 35
+Release  : 36
 URL      : http://pypi.debian.net/psutil/psutil-5.3.1.tar.gz
 Source0  : http://pypi.debian.net/psutil/psutil-5.3.1.tar.gz
 Summary  : Cross-platform lib for process and system monitoring in Python.
@@ -17,6 +17,7 @@ Requires: enum34
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : pluggy
+BuildRequires : procps-ng
 BuildRequires : py-python
 BuildRequires : pytest
 BuildRequires : python-dev
@@ -65,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1507168638
+export SOURCE_DATE_EPOCH=1507480400
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -75,7 +76,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test || :
 %install
-export SOURCE_DATE_EPOCH=1507168638
+export SOURCE_DATE_EPOCH=1507480400
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
