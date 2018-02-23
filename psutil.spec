@@ -4,15 +4,14 @@
 #
 Name     : psutil
 Version  : 5.4.3
-Release  : 44
+Release  : 45
 URL      : http://pypi.debian.net/psutil/psutil-5.4.3.tar.gz
 Source0  : http://pypi.debian.net/psutil/psutil-5.4.3.tar.gz
 Summary  : Cross-platform lib for process and system monitoring in Python.
 Group    : Development/Tools
 License  : BSD-3-Clause
-Requires: psutil-legacypython
 Requires: psutil-python3
-Requires: psutil-python
+Requires: enum34
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : pluggy
@@ -41,7 +40,6 @@ legacypython components for the psutil package.
 %package python
 Summary: python components for the psutil package.
 Group: Default
-Requires: psutil-legacypython
 Requires: psutil-python3
 
 %description python
@@ -65,7 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1514846710
+export SOURCE_DATE_EPOCH=1519342320
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -75,7 +73,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test || :
 %install
-export SOURCE_DATE_EPOCH=1514846710
+export SOURCE_DATE_EPOCH=1519342320
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
