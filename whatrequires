@@ -1,5 +1,7 @@
 # This file contains recursive sources that require this package
+gjs
 glances
 mozjs
 mozjs38
-mypy
+mozjs52
+ostree
