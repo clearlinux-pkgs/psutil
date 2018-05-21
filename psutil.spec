@@ -4,7 +4,7 @@
 #
 Name     : psutil
 Version  : 5.4.5
-Release  : 47
+Release  : 48
 URL      : http://pypi.debian.net/psutil/psutil-5.4.5.tar.gz
 Source0  : http://pypi.debian.net/psutil/psutil-5.4.5.tar.gz
 Summary  : Cross-platform lib for process and system monitoring in Python.
