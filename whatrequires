@@ -1,4 +1,5 @@
 # This file contains recursive sources that require this package
+deprecated-glances
 glances
 mozjs
 mozjs38
