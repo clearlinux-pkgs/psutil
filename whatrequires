@@ -1,7 +1,13 @@
 # This file contains recursive sources that require this package
+cassandra
+cinder
 deprecated-glances
+distributed
 glances
+ironic
 mozjs
 mozjs38
 mozjs52
 mozjs60
+neutron
+nova
