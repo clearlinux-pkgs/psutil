@@ -4,7 +4,7 @@
 #
 Name     : psutil
 Version  : 5.6.5
-Release  : 68
+Release  : 69
 URL      : https://files.pythonhosted.org/packages/03/9a/95c4b3d0424426e5fd94b5302ff74cea44d5d4f53466e1228ac8e73e14b4/psutil-5.6.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/03/9a/95c4b3d0424426e5fd94b5302ff74cea44d5d4f53466e1228ac8e73e14b4/psutil-5.6.5.tar.gz
 Summary  : Cross-platform lib for process and system monitoring in Python.
@@ -16,10 +16,12 @@ Requires: psutil-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : procps-ng
 BuildRequires : python3-dev
+BuildRequires : util-linux
+Patch1: CVE-2019-18874.patch
 
 %description
-This directory contains scripts which are meant to be used internally
-(benchmarks, CI automation, etc.).
+|  |version| |py-versions| |packages| |license|
+        |  |travis| |appveyor| |doc| |twitter| |tidelift|
 
 %package license
 Summary: license components for the psutil package.
@@ -49,22 +51,23 @@ python3 components for the psutil package.
 
 %prep
 %setup -q -n psutil-5.6.5
+cd %{_builddir}/psutil-5.6.5
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1573051994
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1573757257
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
