@@ -4,7 +4,7 @@
 #
 Name     : psutil
 Version  : 5.6.5
-Release  : 69
+Release  : 70
 URL      : https://files.pythonhosted.org/packages/03/9a/95c4b3d0424426e5fd94b5302ff74cea44d5d4f53466e1228ac8e73e14b4/psutil-5.6.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/03/9a/95c4b3d0424426e5fd94b5302ff74cea44d5d4f53466e1228ac8e73e14b4/psutil-5.6.5.tar.gz
 Summary  : Cross-platform lib for process and system monitoring in Python.
