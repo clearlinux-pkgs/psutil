@@ -7,6 +7,10 @@ ironic
 mozjs
 mozjs52
 mozjs60
+mycroft-core
 neutron
 nova
 oslo.reports
+performance
+spyder-ide
+spyder-notebook

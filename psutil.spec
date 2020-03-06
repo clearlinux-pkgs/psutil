@@ -4,7 +4,7 @@
 #
 Name     : psutil
 Version  : 5.6.7
-Release  : 72
+Release  : 73
 URL      : https://files.pythonhosted.org/packages/73/93/4f8213fbe66fc20cb904f35e6e04e20b47b85bee39845cc66a0bcf5ccdcb/psutil-5.6.7.tar.gz
 Source0  : https://files.pythonhosted.org/packages/73/93/4f8213fbe66fc20cb904f35e6e04e20b47b85bee39845cc66a0bcf5ccdcb/psutil-5.6.7.tar.gz
 Summary  : Cross-platform lib for process and system monitoring in Python.
@@ -42,6 +42,7 @@ python components for the psutil package.
 Summary: python3 components for the psutil package.
 Group: Default
 Requires: python3-core
+Provides: pypi(psutil)
 
 %description python3
 python3 components for the psutil package.
@@ -56,7 +57,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578087319
+export SOURCE_DATE_EPOCH=1583522014
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
