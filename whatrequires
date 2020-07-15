@@ -4,12 +4,12 @@ distributed
 glances
 horovod
 ironic
+locustio
 mozjs
-mozjs52
 mozjs60
+mozjs68
 mycroft-core
 neutron
-nova
 oslo.reports
 performance
 spyder-ide
