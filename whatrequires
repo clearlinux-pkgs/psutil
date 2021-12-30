@@ -1,8 +1,7 @@
 # This file contains recursive sources that require this package
-distributed
 glances
-horovod
-mozjs68
 mozjs78
-pytest-xdist
-spyder-ide
+mozjs91
+pid
+pytorch
+salt
